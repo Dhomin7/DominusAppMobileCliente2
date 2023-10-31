@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/menuInicioFragment">
+    <fragment
+        android:id="@+id/menuInicioFragment"
+        android:name="DominusApp.view.MenuInicioFragment"
+        android:label="fragment_menu_inicio"
+        tools:layout="@layout/fragment_menu_inicio" >
+        <action
+            android:id="@+id/acao_menuInicioFragment_loginFragment"
+            app:destination="@id/loginFragment" />
+        <action
+            android:id="@+id/acao_menuInicioFragment_cadastrarFragment"
+            app:destination="@id/cadastrarFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="DominusApp.view.LoginFragment"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login" >
+        <action
+            android:id="@+id/acao_loginFragment_menuFragment"
+            app:destination="@id/menuFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/cadastrarFragment"
+        android:name="DominusApp.view.CadastrarFragment"
+        android:label="fragment_cadastrar"
+        tools:layout="@layout/fragment_cadastrar" >
+        <action
+            android:id="@+id/acao_cadastrarFragment_loginFragment"
+            app:destination="@id/loginFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/carrinhoFragment"
+        android:name="DominusApp.view.CarrinhoFragment"
+        android:label="fragment_carrinho"
+        tools:layout="@layout/fragment_carrinho" />
+    <fragment
+        android:id="@+id/dptoFragment"
+        android:name="DominusApp.view.DptoFragment"
+        android:label="fragment_dpto"
+        tools:layout="@layout/fragment_dpto" />
+    <fragment
+        android:id="@+id/menuFragment"
+        android:name="DominusApp.view.MenuFragment"
+        android:label="fragment_menu"
+        tools:layout="@layout/fragment_menu" >
+        <action
+            android:id="@+id/acao_menuFragment_ofertasFragment"
+            app:destination="@id/ofertasFragment" />
+        <action
+            android:id="@+id/acao_menuFragment_dptoFragment"
+            app:destination="@id/dptoFragment" />
+        <action
+            android:id="@+id/acao_menuFragment_carrinhoFragment"
+            app:destination="@id/carrinhoFragment" />
+        <action
+            android:id="@+id/acao_menuFragment_usuarioFragment"
+            app:destination="@id/usuarioFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/ofertasFragment"
+        android:name="DominusApp.view.OfertasFragment"
+        android:label="fragment_ofertas"
+        tools:layout="@layout/fragment_ofertas" />
+    <fragment
+        android:id="@+id/usuarioFragment"
+        android:name="DominusApp.view.UsuarioFragment"
+        android:label="fragment_usuario"
+        tools:layout="@layout/fragment_usuario" />
+</navigation>
