@@ -7,16 +7,20 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.net.Socket;
+import java.util.ArrayList;
 
 
 import DominusApp.viewModel.InformacoesViewModel;
+import modelDominio.Produto;
 import modelDominio.Usuario;
+
 
 public class ConexaoController {
         InformacoesViewModel informacoesViewModel;
 
     public ConexaoController(InformacoesViewModel informacoesViewModel) {
         this.informacoesViewModel = informacoesViewModel;
+
     }
     public boolean criaConexaoServidor(String ip, int porta) {
         boolean resultado;
@@ -37,23 +41,6 @@ public class ConexaoController {
         return resultado;
 
     }
-    /*public Usuario efetuarLogin(Usuario usuario) {
-        Usuario usuarioLogado;
-
-        try {
-            out.writeObject("UsuarioEfetuarLogin");
-            String msg = (String)in.readObject();
-            out.writeObject(usuario);
-            usuarioLogado = (Usuario)in.readObject();
-        } catch (IOException ioe) {
-            ioe.printStackTrace();
-            usuarioLogado = null;
-        } catch (ClassNotFoundException cne) {
-            cne.printStackTrace();
-            usuarioLogado = null;
-        }
-        return usuarioLogado;
-    }*/
     public Usuario efetuarLogin(Usuario usuario) {
         Usuario usuarioLogado;
         String mensagem;
@@ -72,5 +59,21 @@ public class ConexaoController {
         }
 
         return usuarioLogado;
+    }
+    public ArrayList<Produto> listaProdutos(){
+        ArrayList<Produto> listaProdutos;
+
+        try {
+            this.informacoesViewModel.getOutputStream().writeObject("BikeLista");
+            listaProdutos = (ArrayList<Produto>) this.informacoesViewModel.getInputStream().readObject();
+        } catch(IOException ioe){
+            Log.e("BikeShop", "Erro: " + ioe.getMessage());
+            listaProdutos = null;
+        } catch (ClassNotFoundException classe){
+            Log.e("BikeShop", "Erro: " + classe.getMessage());
+            listaProdutos = null;
+        }
+        return listaProdutos;
+    }
     }
 }

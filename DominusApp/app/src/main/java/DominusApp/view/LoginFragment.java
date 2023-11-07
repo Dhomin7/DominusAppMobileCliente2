@@ -34,7 +34,7 @@ public class LoginFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-
+        informacoesViewModel = new ViewModelProvider(getActivity()).get(InformacoesViewModel.class);
         binding.bLoginSalvar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -74,8 +74,17 @@ public class LoginFragment extends Fragment {
 
             }
         });
+        binding.bLoginCancelar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                limpaCampos();
+            }
+        });
     }
-
+    public void limpaCampos() {
+        binding.etLoginUsuario.setText("");
+        binding.etLoginSenha.setText("");
+    }
 
         @Override
         public void onDestroyView () {
