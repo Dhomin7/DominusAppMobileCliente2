@@ -10,6 +10,8 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.recyclerview.widget.DefaultItemAnimator;
+import androidx.recyclerview.widget.LinearLayoutManager;
 
 import com.example.dominusapp.databinding.FragmentOfertasBinding;
 
@@ -28,7 +30,7 @@ public class OfertasFragment extends Fragment {
 
     OfertasAdapter ofertasAdapter;
 
-    ArrayList<Produto> listaProdutos;
+    ArrayList<Produto> listaProdutosCompletos;
 
 
     @Override
@@ -45,8 +47,8 @@ public class OfertasFragment extends Fragment {
             @Override
             public void run() {
                 ConexaoController conexaoController = new ConexaoController(informacoesViewModel);
-                listaProdutos = conexaoController.listaProdutos();
-                if( listaProdutos != null){
+                listaProdutosCompletos = conexaoController.listaProdutosCompletos();
+                if( listaProdutosCompletos != null){
                     getActivity().runOnUiThread(new Runnable() {
                         @Override
                         public void run() { atualizaListagem();}
@@ -58,7 +60,11 @@ public class OfertasFragment extends Fragment {
     }
 
     public void atualizaListagem(){
-        ofertasAdapter = new OfertasAdapter(listaProdutos, trataCliqueItem);
+        ofertasAdapter = new OfertasAdapter(listaProdutosCompletos, trataCliqueItem);
+        binding.rvOfertas1.setLayoutManager(new LinearLayoutManager(getContext()));
+        binding.rvOfertas1.setItemAnimator(new DefaultItemAnimator());
+        binding.rvOfertas1.setAdapter(ofertasAdapter);
+
     }
 
     OfertasAdapter.ProdutoOnClickListener trataCliqueItem = new OfertasAdapter.ProdutoOnClickListener(){

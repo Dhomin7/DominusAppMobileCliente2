@@ -60,19 +60,19 @@ public class ConexaoController {
 
         return usuarioLogado;
     }
-    public ArrayList<Produto> listaProdutos(){
-        ArrayList<Produto> listaProdutos;
+    public ArrayList<Produto> listaProdutosCompletos(){
+        ArrayList<Produto> listaProdutosCompletos;
 
         try {
-            this.informacoesViewModel.getOutputStream().writeObject("BikeLista");
-            listaProdutos = (ArrayList<Produto>) this.informacoesViewModel.getInputStream().readObject();
+            this.informacoesViewModel.getOutputStream().writeObject("ListaProdutosCompleta");
+            listaProdutosCompletos = (ArrayList<Produto>) this.informacoesViewModel.getInputStream().readObject();
         } catch(IOException ioe){
-            Log.e("BikeShop", "Erro: " + ioe.getMessage());
-            listaProdutos = null;
+            Log.e("DominusAPP", "Erro: " + ioe.getMessage());
+            listaProdutosCompletos = null;
         } catch (ClassNotFoundException classe){
-            Log.e("BikeShop", "Erro: " + classe.getMessage());
-            listaProdutos = null;
+            Log.e("DominusAPP", "Erro: " + classe.getMessage());
+            listaProdutosCompletos = null;
         }
-        return listaProdutos;
+        return listaProdutosCompletos;
     }
     }

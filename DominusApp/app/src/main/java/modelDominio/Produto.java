@@ -1,6 +1,7 @@
 package modelDominio;
 
 import java.io.Serializable;
+import java.text.DecimalFormat;
 
 public class Produto implements Serializable {
     private static final long serialVersionUID = 123l;
@@ -96,10 +97,13 @@ public class Produto implements Serializable {
         return preco;
     }
 
+    public String getPrecoString() {
+        DecimalFormat dcf = new DecimalFormat("#,##0.00");
+        return dcf.format(this.preco);
+    }
+
     public void setPreco(float preco) {
         this.preco = preco;
     }
-
-
 
 }

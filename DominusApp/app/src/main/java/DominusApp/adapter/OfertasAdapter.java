@@ -27,11 +27,11 @@ import java.util.List;
 import modelDominio.Produto;
 
 public class OfertasAdapter extends  RecyclerView.Adapter<OfertasAdapter.MyViewHolder> {
-    private List<Produto> listaProdutos;
+    private List<Produto> listaProdutosCompletos;
     private ProdutoOnClickListener produtoOnClickListener;
 
-    public OfertasAdapter (List<Produto> listaProdutos, ProdutoOnClickListener produtoOnClickListener) {
-        this.listaProdutos = listaProdutos;
+    public OfertasAdapter (List<Produto> listaProdutosCompletos, ProdutoOnClickListener produtoOnClickListener) {
+        this.listaProdutosCompletos = listaProdutosCompletos;
         this.produtoOnClickListener = produtoOnClickListener;
     }
 
@@ -43,9 +43,9 @@ public class OfertasAdapter extends  RecyclerView.Adapter<OfertasAdapter.MyViewH
 
     @Override
     public void onBindViewHolder(final OfertasAdapter.MyViewHolder holder, @SuppressLint("RecyclerView") final int position) {
-        Produto produto = listaProdutos.get(position);
+        Produto produto = listaProdutosCompletos.get(position);
         holder.itemListRowOfertas1Binding.tvTextoProduto.setText(produto.getNome());
-// preço??
+        holder.itemListRowOfertas1Binding.tvPrecoProduto.setText("R$ " + produto.getPrecoString());
         if (produtoOnClickListener != null) {
             holder.itemListRowOfertas1Binding.getRoot().setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -58,14 +58,14 @@ public class OfertasAdapter extends  RecyclerView.Adapter<OfertasAdapter.MyViewH
 
     @Override
     public int getItemCount() {
-        return listaProdutos.size();
+        return listaProdutosCompletos.size();
     }
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
         public ItemListRowOfertas1Binding itemListRowOfertas1Binding;
         public MyViewHolder(ItemListRowOfertas1Binding itemListRowBinding) {
             super(itemListRowBinding.getRoot());
-            this.itemListRowOfertas1Binding = itemListRowOfertas1Binding;
+            this.itemListRowOfertas1Binding = itemListRowBinding;
         }
     }
 
