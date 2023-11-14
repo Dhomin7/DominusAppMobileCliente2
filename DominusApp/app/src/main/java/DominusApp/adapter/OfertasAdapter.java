@@ -45,7 +45,7 @@ public class OfertasAdapter extends  RecyclerView.Adapter<OfertasAdapter.MyViewH
     public void onBindViewHolder(final OfertasAdapter.MyViewHolder holder, @SuppressLint("RecyclerView") final int position) {
         Produto produto = listaProdutos.get(position);
         holder.itemListRowOfertas1Binding.tvTextoProduto.setText(produto.getNome());
-
+// preço??
         if (produtoOnClickListener != null) {
             holder.itemListRowOfertas1Binding.getRoot().setOnClickListener(new View.OnClickListener() {
                 @Override
