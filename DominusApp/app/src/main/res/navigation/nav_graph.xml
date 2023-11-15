@@ -38,12 +38,23 @@
         android:id="@+id/carrinhoFragment"
         android:name="DominusApp.view.CarrinhoFragment"
         android:label="fragment_carrinho"
-        tools:layout="@layout/fragment_carrinho" />
+        tools:layout="@layout/fragment_carrinho" >
+        <action
+            android:id="@+id/acao_carrinhoFragment_produtoFragment"
+            app:destination="@id/produtoFragment" />
+        <argument
+            android:name="produto"
+            app:argType="modelDominio.Produto" />
+    </fragment>
     <fragment
         android:id="@+id/dptoFragment"
         android:name="DominusApp.view.DptoFragment"
         android:label="fragment_dpto"
-        tools:layout="@layout/fragment_dpto" />
+        tools:layout="@layout/fragment_dpto" >
+        <action
+            android:id="@+id/acao_dptoFragment_produtoFragment"
+            app:destination="@id/produtoFragment" />
+    </fragment>
     <fragment
         android:id="@+id/menuFragment"
         android:name="DominusApp.view.MenuFragment"
@@ -66,10 +77,26 @@
         android:id="@+id/ofertasFragment"
         android:name="DominusApp.view.OfertasFragment"
         android:label="fragment_ofertas"
-        tools:layout="@layout/fragment_ofertas" />
+        tools:layout="@layout/fragment_ofertas" >
+        <action
+            android:id="@+id/acao_ofertasFragment_produtoFragment"
+            app:destination="@id/produtoFragment" />
+    </fragment>
     <fragment
         android:id="@+id/usuarioFragment"
         android:name="DominusApp.view.UsuarioFragment"
         android:label="fragment_usuario"
         tools:layout="@layout/fragment_usuario" />
+    <fragment
+        android:id="@+id/produtoFragment"
+        android:name="DominusApp.view.ProdutoFragment"
+        android:label="fragment_produto"
+        tools:layout="@layout/fragment_produto" >
+        <argument
+            android:name="produto"
+            app:argType="modelDominio.Produto" />
+        <action
+            android:id="@+id/acao_produtoFragment_carrinhoFragment"
+            app:destination="@id/carrinhoFragment" />
+    </fragment>
 </navigation>

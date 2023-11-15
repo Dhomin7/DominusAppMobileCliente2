@@ -10,9 +10,11 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
+import com.example.dominusapp.R;
 import com.example.dominusapp.databinding.FragmentOfertasBinding;
 
 import java.util.ArrayList;
@@ -70,10 +72,9 @@ public class OfertasFragment extends Fragment {
     OfertasAdapter.ProdutoOnClickListener trataCliqueItem = new OfertasAdapter.ProdutoOnClickListener(){
         @Override
         public void onClickProduto(View view, int position, Produto produto) {
-           /* Toast.makeText(getContext(), "Modelo: " + bike.getModelo() +
-                    ", Marca: " + bike.getMarca().getNomeMarca() +
-                    ", Preço: " + bike.getPreco() +
-                    ", Data: " + bike.getDataLancamento(), Toast.LENGTH_SHORT).show();*/
+           OfertasFragmentDirections.AcaoOfertasFragmentProdutoFragment acao =
+                   OfertasFragmentDirections.acaoOfertasFragmentProdutoFragment(produto);
+           Navigation.findNavController(view).navigate(acao);
         }
     };
 

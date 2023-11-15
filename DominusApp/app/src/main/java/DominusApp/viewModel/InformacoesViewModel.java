@@ -5,15 +5,19 @@ import androidx.lifecycle.ViewModel;
 
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+import java.util.ArrayList;
 
+import modelDominio.Produto;
 import modelDominio.Usuario;
 
-public class InformacoesViewModel extends ViewModel {
 
+public class InformacoesViewModel extends ViewModel {
+    ArrayList<Produto> listaCarrinho;
     private MutableLiveData<ObjectInputStream> mIn;
     private  MutableLiveData<ObjectOutputStream> mOut;
     private MutableLiveData<Usuario> mUsuarioLogado;
 
+    Produto produto;
 
     public void inicializaObjetosSocket(ObjectInputStream in, ObjectOutputStream out){
 
@@ -38,6 +42,8 @@ public class InformacoesViewModel extends ViewModel {
     public Usuario getUsuario(){
         return this.mUsuarioLogado.getValue();
     }
+
+
 
 
 }
