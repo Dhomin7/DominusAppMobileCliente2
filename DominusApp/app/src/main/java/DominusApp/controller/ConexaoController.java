@@ -11,6 +11,7 @@ import java.util.ArrayList;
 
 
 import DominusApp.viewModel.InformacoesViewModel;
+import modelDominio.Departamento;
 import modelDominio.Produto;
 import modelDominio.Usuario;
 
@@ -74,5 +75,21 @@ public class ConexaoController {
             listaProdutosCompletos = null;
         }
         return listaProdutosCompletos;
+    }
+
+    public ArrayList<Departamento> listaDepartamento(){
+        ArrayList<Departamento> listaDepartamento;
+
+        try {
+            this.informacoesViewModel.getOutputStream().writeObject("ListaDepartamentos");
+            listaDepartamento = (ArrayList<Departamento>) this.informacoesViewModel.getInputStream().readObject();
+        } catch(IOException ioe){
+            Log.e("DominusAPP", "Erro: " + ioe.getMessage());
+            listaDepartamento = null;
+        } catch (ClassNotFoundException classe){
+            Log.e("DominusAPP", "Erro: " + classe.getMessage());
+            listaDepartamento = null;
+        }
+        return listaDepartamento;
     }
     }

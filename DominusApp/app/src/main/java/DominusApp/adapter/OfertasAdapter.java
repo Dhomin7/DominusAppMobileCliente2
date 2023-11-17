@@ -1,24 +1,17 @@
 package DominusApp.adapter;
 
-import android.os.Bundle;
+
 import android.view.ViewGroup;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.dominusapp.R;
 
-import java.util.ArrayList;
 
 import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
+
 import android.annotation.SuppressLint;
 
-import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.dominusapp.databinding.ItemListRowOfertas1Binding;
 
