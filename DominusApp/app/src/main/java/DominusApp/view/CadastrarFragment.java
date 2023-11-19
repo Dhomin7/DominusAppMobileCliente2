@@ -5,20 +5,26 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.ViewModelProvider;
+import androidx.navigation.Navigation;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import com.example.dominusapp.R;
 import com.example.dominusapp.databinding.FragmentCadastrarBinding;
 
+import DominusApp.controller.ConexaoController;
 import DominusApp.view.util.MaskWatcher;
+import DominusApp.viewModel.InformacoesViewModel;
 import modelDominio.Cliente;
 import modelDominio.Usuario;
 
 public class CadastrarFragment extends Fragment {
     FragmentCadastrarBinding binding;
+    InformacoesViewModel informacoesViewModel;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -32,6 +38,7 @@ public class CadastrarFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
+        informacoesViewModel = new ViewModelProvider(getActivity()).get(InformacoesViewModel.class);
         binding.bCadastrarCadastrar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -65,6 +72,26 @@ public class CadastrarFragment extends Fragment {
 
                 Cliente novoCliente = new Cliente(nome,login,senha,endereco,cpf);
 
+                Thread thread = new Thread(new Runnable() {
+                    @Override
+                    public void run() {
+                        ConexaoController conexaoController = new ConexaoController(informacoesViewModel);
+                        boolean resultado = conexaoController.clienteInserir(novoCliente);
+
+                        getActivity().runOnUiThread(new Runnable() {
+                            @Override
+                            public void run() {
+                                if (resultado) {
+                                    Toast.makeText(getContext(), "Cadastro realizado com sucesso!", Toast.LENGTH_SHORT).show();
+                                    Navigation.findNavController(view).navigate(R.id.acao_cadastrarFragment_loginFragment);
+                                } else {
+                                    Toast.makeText(getContext(), "Erro ao efetuar cadastro", Toast.LENGTH_SHORT).show();
+                                }
+                            }
+                        });
+                    }
+                });
+                thread.start();
             }
         });
     }

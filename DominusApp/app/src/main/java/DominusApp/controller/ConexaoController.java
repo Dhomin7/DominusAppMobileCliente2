@@ -11,6 +11,7 @@ import java.util.ArrayList;
 
 
 import DominusApp.viewModel.InformacoesViewModel;
+import modelDominio.Cliente;
 import modelDominio.Departamento;
 import modelDominio.Produto;
 import modelDominio.Usuario;
@@ -92,4 +93,23 @@ public class ConexaoController {
         }
         return listaDepartamento;
     }
+
+    public boolean clienteInserir(Cliente cliente) {
+        boolean resultado;
+
+        try {
+            this.informacoesViewModel.getOutputStream().writeObject("ClienteInserir");
+            String msg = (String) this.informacoesViewModel.getInputStream().readObject();
+            this.informacoesViewModel.getOutputStream().writeObject(cliente);
+            resultado = (boolean) this.informacoesViewModel.getInputStream().readObject();
+        } catch (IOException ioe) {
+            Log.e("DominusApp", "Erro: "+ ioe.getMessage());
+            resultado = false;
+        } catch (ClassNotFoundException cne) {
+            Log.e("DominusApp", "Erro: "+ cne.getMessage());
+            resultado = false;
+        }
+        return resultado;
+    }
+
     }
