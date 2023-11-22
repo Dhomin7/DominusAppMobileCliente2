@@ -35,7 +35,7 @@ public class MenuInicioFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         informacoesViewModel = new ViewModelProvider(getActivity()).get(InformacoesViewModel.class);
-//1313
+
         Thread thread = new Thread(new Runnable() {
             @Override
             public void run() {
