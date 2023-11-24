@@ -54,6 +54,9 @@
         <action
             android:id="@+id/acao_dptoFragment_produtoFragment"
             app:destination="@id/produtoFragment" />
+        <action
+            android:id="@+id/acao_dptoFragment_departamentoProdutoFragment"
+            app:destination="@id/departamentoProdutoFragment" />
     </fragment>
     <fragment
         android:id="@+id/menuFragment"
@@ -98,5 +101,17 @@
         <action
             android:id="@+id/acao_produtoFragment_carrinhoFragment"
             app:destination="@id/carrinhoFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/departamentoProdutoFragment"
+        android:name="DominusApp.view.DepartamentoProdutoFragment"
+        android:label="fragment_departamento_produto"
+        tools:layout="@layout/fragment_departamento_produto" >
+        <argument
+            android:name="departamento"
+            app:argType="modelDominio.Departamento" />
+        <action
+            android:id="@+id/acao_departamentoProdutoFragment_produtoFragment"
+            app:destination="@id/produtoFragment" />
     </fragment>
 </navigation>

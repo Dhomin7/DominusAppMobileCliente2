@@ -5,6 +5,7 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.Lifecycle;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.DefaultItemAnimator;
@@ -14,41 +15,49 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-
-import com.example.dominusapp.databinding.FragmentDptoBinding;
+import com.example.dominusapp.R;
+import com.example.dominusapp.databinding.FragmentDepartamentoProdutoBinding;
+import com.example.dominusapp.databinding.FragmentOfertasBinding;
 
 import java.util.ArrayList;
 
-import DominusApp.adapter.DptoAdapter;
-
+import DominusApp.adapter.DptoProdutoAdapter;
+import DominusApp.adapter.OfertasAdapter;
 import DominusApp.controller.ConexaoController;
 import DominusApp.viewModel.InformacoesViewModel;
 import modelDominio.Departamento;
+import modelDominio.Produto;
 
+public class DepartamentoProdutoFragment extends Fragment {
 
+    FragmentDepartamentoProdutoBinding binding;
 
-public class DptoFragment extends Fragment {
     InformacoesViewModel informacoesViewModel;
-    DptoAdapter dptoAdapter;
-    ArrayList<Departamento> listaDpto;
- FragmentDptoBinding binding;
+
+    DptoProdutoAdapter dptoProdutoAdapter;
+
+    ArrayList<Produto> listaProdutosDepartamento;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        binding = FragmentDptoBinding.inflate(inflater,container,false);
+        binding = FragmentDepartamentoProdutoBinding.inflate(inflater,container,false);
         return binding.getRoot();
     }
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+
+        DepartamentoProdutoFragmentArgs argumentos = DepartamentoProdutoFragmentArgs.fromBundle(getArguments());
+
+        Departamento departamento = argumentos.getDepartamento();
         informacoesViewModel = new ViewModelProvider(getActivity()).get(InformacoesViewModel.class);
         Thread thread = new Thread(new Runnable() {
             @Override
             public void run() {
                 ConexaoController conexaoController = new ConexaoController(informacoesViewModel);
-                listaDpto = conexaoController.listaDepartamento();
-                if( listaDpto != null){
+                listaProdutosDepartamento = conexaoController.listaProdutosDepartamento(departamento);
+                if( listaProdutosDepartamento != null){
                     getActivity().runOnUiThread(new Runnable() {
                         @Override
                         public void run() { atualizaListagem();}
@@ -58,26 +67,22 @@ public class DptoFragment extends Fragment {
         });
         thread.start();
     }
-
     public void atualizaListagem(){
-        dptoAdapter = new DptoAdapter(listaDpto, trataCliqueItem);
-        binding.rvDpto.setLayoutManager(new LinearLayoutManager(getContext()));
-        binding.rvDpto.setItemAnimator(new DefaultItemAnimator());
-        binding.rvDpto.setAdapter(dptoAdapter);
+        dptoProdutoAdapter = new DptoProdutoAdapter(listaProdutosDepartamento, trataCliqueItem);
+        binding.rvProdutoDpto.setLayoutManager(new LinearLayoutManager(getContext()));
+        binding.rvProdutoDpto.setItemAnimator(new DefaultItemAnimator());
+        binding.rvProdutoDpto.setAdapter(dptoProdutoAdapter);
 
     }
 
-    DptoAdapter.DepartamentoOnClickListener trataCliqueItem = new DptoAdapter.DepartamentoOnClickListener() {
+    DptoProdutoAdapter.ProdutoOnClickListener trataCliqueItem = new DptoProdutoAdapter.ProdutoOnClickListener(){
         @Override
-        public void onClickDepartamento(View view, int position, Departamento departamento) {
-
-            DominusApp.view.DptoFragmentDirections.AcaoDptoFragmentDepartamentoProdutoFragment acao =
-                    DptoFragmentDirections.acaoDptoFragmentDepartamentoProdutoFragment(departamento);
+        public void onClickProduto(View view, int position, Produto produto) {
+            DepartamentoProdutoFragmentDirections.AcaoDepartamentoProdutoFragmentProdutoFragment acao =
+                    DepartamentoProdutoFragmentDirections.acaoDepartamentoProdutoFragmentProdutoFragment(produto);
             Navigation.findNavController(view).navigate(acao);
-
         }
     };
-
     @Override
     public void onDestroyView() {
         super.onDestroyView();

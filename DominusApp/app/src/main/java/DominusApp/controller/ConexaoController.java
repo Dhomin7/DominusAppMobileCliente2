@@ -78,6 +78,25 @@ public class ConexaoController {
         return listaProdutosCompletos;
     }
 
+    public ArrayList<Produto> listaProdutosDepartamento(Departamento departamento){
+        ArrayList<Produto> listaProdutosDepartamento;
+        String mensagem;
+        try {
+            this.informacoesViewModel.getOutputStream().writeObject("ListaProdutosDepartamento");
+            mensagem = (String)this.informacoesViewModel.getInputStream().readObject();
+            this.informacoesViewModel.getOutputStream().writeObject(departamento);
+            listaProdutosDepartamento = (ArrayList<Produto>) this.informacoesViewModel.getInputStream().readObject();
+
+        } catch(IOException ioe){
+            Log.e("DominusAPP", "Erro: " + ioe.getMessage());
+            listaProdutosDepartamento = null;
+        } catch (ClassNotFoundException classe){
+            Log.e("DominusAPP", "Erro: " + classe.getMessage());
+            listaProdutosDepartamento = null;
+        }
+        return listaProdutosDepartamento;
+    }
+
     public ArrayList<Departamento> listaDepartamento(){
         ArrayList<Departamento> listaDepartamento;
 
