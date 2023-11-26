@@ -96,6 +96,13 @@ public class LoginFragment extends Fragment {
                 limpaCampos();
             }
         });
+
+        binding.tvEsqueceuSenha.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Navigation.findNavController(view).navigate(R.id.acao_loginFragment_recuperarSenhaFragment);
+            }
+        });
     }
     public void limpaCampos() {
         binding.etLoginUsuario.setText("");

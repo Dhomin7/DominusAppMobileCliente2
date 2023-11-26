@@ -24,6 +24,9 @@
         <action
             android:id="@+id/acao_loginFragment_menuFragment"
             app:destination="@id/menuFragment" />
+        <action
+            android:id="@+id/acao_loginFragment_recuperarSenhaFragment"
+            app:destination="@id/recuperarSenhaFragment" />
     </fragment>
     <fragment
         android:id="@+id/cadastrarFragment"
@@ -113,5 +116,14 @@
         <action
             android:id="@+id/acao_departamentoProdutoFragment_produtoFragment"
             app:destination="@id/produtoFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/recuperarSenhaFragment"
+        android:name="DominusApp.view.RecuperarSenhaFragment"
+        android:label="fragment_recuperar_senha"
+        tools:layout="@layout/fragment_recuperar_senha" >
+        <action
+            android:id="@+id/acao_recuperarSenhaFragment_loginFragment"
+            app:destination="@id/loginFragment" />
     </fragment>
 </navigation>

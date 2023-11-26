@@ -24,7 +24,17 @@
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/etLoginSenha"/>
+        android:id="@+id/etLoginSenha"
+        android:inputType="textPassword"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tvEsqueceuSenha"
+        android:text="Esqueceu sua senha?"
+        android:layout_gravity="center"
+        android:layout_margin="20dp"
+        android:textColor="#ffcc00"/>
 
     <Button
         android:layout_width="match_parent"
