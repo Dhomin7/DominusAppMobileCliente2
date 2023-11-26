@@ -78,6 +78,9 @@
         <action
             android:id="@+id/acao_menuFragment_usuarioFragment"
             app:destination="@id/usuarioFragment" />
+        <argument
+            android:name="usuario"
+            app:argType="modelDominio.Usuario" />
     </fragment>
     <fragment
         android:id="@+id/ofertasFragment"
@@ -92,7 +95,11 @@
         android:id="@+id/usuarioFragment"
         android:name="DominusApp.view.UsuarioFragment"
         android:label="fragment_usuario"
-        tools:layout="@layout/fragment_usuario" />
+        tools:layout="@layout/fragment_usuario" >
+        <argument
+            android:name="usuario"
+            app:argType="modelDominio.Usuario" />
+    </fragment>
     <fragment
         android:id="@+id/produtoFragment"
         android:name="DominusApp.view.ProdutoFragment"

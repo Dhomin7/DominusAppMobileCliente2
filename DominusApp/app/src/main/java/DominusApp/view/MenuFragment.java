@@ -17,10 +17,13 @@ import com.example.dominusapp.databinding.FragmentMenuBinding;
 import java.io.FileDescriptor;
 import java.io.PrintWriter;
 
+import modelDominio.Usuario;
+
 
 public class MenuFragment extends Fragment {
 
     FragmentMenuBinding binding;
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -43,6 +46,7 @@ public class MenuFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 Navigation.findNavController(view).navigate(R.id.acao_menuFragment_dptoFragment);
+
             }
         });
         binding.bMenuCarrinho.setOnClickListener(new View.OnClickListener() {

@@ -21,6 +21,7 @@ import java.io.UnsupportedEncodingException;
 import java.security.NoSuchAlgorithmException;
 
 import DominusApp.controller.ConexaoController;
+import DominusApp.view.LoginFragmentDirections;
 import DominusApp.view.util.Hash;
 import DominusApp.viewModel.InformacoesViewModel;
 import modelDominio.Usuario;
@@ -71,6 +72,8 @@ public class LoginFragment extends Fragment {
                                 if(usuarioLogado!=null){
                                     informacoesViewModel.inicializaUsuarioLogado(usuarioLogado);
                                     Navigation.findNavController(view).navigate(R.id.acao_loginFragment_menuFragment);
+
+
                                 }else{
                                     Toast.makeText(getContext(), "Erro, Usuário e/ou senha inválidos", Toast.LENGTH_SHORT).show();
                                 }
