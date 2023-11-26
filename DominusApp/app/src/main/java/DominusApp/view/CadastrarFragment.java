@@ -8,6 +8,7 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.Navigation;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,7 +17,11 @@ import android.widget.Toast;
 import com.example.dominusapp.R;
 import com.example.dominusapp.databinding.FragmentCadastrarBinding;
 
+import java.io.UnsupportedEncodingException;
+import java.security.NoSuchAlgorithmException;
+
 import DominusApp.controller.ConexaoController;
+import DominusApp.view.util.Hash;
 import DominusApp.view.util.MaskWatcher;
 import DominusApp.viewModel.InformacoesViewModel;
 import modelDominio.Cliente;
@@ -68,7 +73,19 @@ public class CadastrarFragment extends Fragment {
                 String login = binding.etCadastrarLogin.getText().toString();
                 String cpf = binding.etCadastrarCPF.getText().toString();
                 String endereco = binding.etCadastrarEndereco.getText().toString();
-                String senha = binding.etCadastrarSenha.getText().toString();
+                String senha;
+
+                try {
+                    senha = Hash.encriptar(binding.etCadastrarSenha.getText().toString(), "SHA-256");
+                } catch (NoSuchAlgorithmException nsae) {
+                    Log.e("DominusApp", "Erro: " + nsae.getMessage());
+                    Toast.makeText(getContext(), "Erro ao efetuar cadastro.", Toast.LENGTH_SHORT).show();
+                    return;
+                } catch (UnsupportedEncodingException unse) {
+                    Log.e("DominusApp", "Erro: " + unse.getMessage());
+                    Toast.makeText(getContext(), "Erro ao efetuar cadastro.", Toast.LENGTH_SHORT).show();
+                    return;
+                }
 
                 Cliente novoCliente = new Cliente(nome,login,senha,endereco,cpf);
 
