@@ -16,6 +16,7 @@ import com.example.dominusapp.databinding.FragmentProdutoBinding;
 
 import java.util.ArrayList;
 
+import DominusApp.controller.ConexaoController;
 import DominusApp.viewModel.InformacoesViewModel;
 import modelDominio.Produto;
 
@@ -49,7 +50,6 @@ public class ProdutoFragment extends Fragment {
         binding.bAdicionarCarrinho.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                 Toast.makeText(getContext(),"Produto adicionado ao carrinho",Toast.LENGTH_SHORT).show();
             }
         });
@@ -58,6 +58,30 @@ public class ProdutoFragment extends Fragment {
             public void onClick(View v) {
 
 
+            }
+        });
+
+        binding.bComprar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Thread thread = new Thread(new Runnable() {
+                    @Override
+                    public void run() {
+                        ConexaoController conexaoController = new ConexaoController(informacoesViewModel);
+                        boolean resultado = conexaoController.vendaInserir(produto);
+                        
+                        getActivity().runOnUiThread(new Runnable() {
+                            @Override
+                            public void run() {
+                                if (resultado)
+                                    Toast.makeText(getContext(), "Compra cadastrada com sucesso!", Toast.LENGTH_SHORT).show();
+                                else
+                                    Toast.makeText(getContext(), "Erro ao cadastrar compra.", Toast.LENGTH_SHORT).show();
+                            }
+                        });
+                    }
+                });
+                thread.start();
             }
         });
     }
