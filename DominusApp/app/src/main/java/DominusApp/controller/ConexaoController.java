@@ -149,4 +149,22 @@ public class ConexaoController {
         return codRecuperacao;
     }
 
+    public boolean alterarSenhaRecup(Usuario usr) {
+        boolean resultado;
+
+        try {
+            this.informacoesViewModel.getOutputStream().writeObject("AlterarSenhaRecup");
+            String msg = (String) this.informacoesViewModel.getInputStream().readObject();
+            this.informacoesViewModel.getOutputStream().writeObject(usr);
+            resultado = (boolean) this.informacoesViewModel.getInputStream().readObject();
+        } catch (IOException ioe) {
+            Log.e("DominusApp", "Erro: "+ ioe.getMessage());
+            resultado = false;
+        } catch (ClassNotFoundException cne) {
+            Log.e("DominusApp", "Erro: "+ cne.getMessage());
+            resultado = false;
+        }
+        return resultado;
+    }
+
     }
