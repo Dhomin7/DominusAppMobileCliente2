@@ -1,0 +1,48 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="DominusApp.view.AlterarSenhaRecupFragment">
+
+   <TextView
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:textAlignment="center"
+       android:textSize="18dp"
+       android:textColor="@color/black"
+       android:text="Informe uma nova senha"
+       android:id="@+id/tvOrdem"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Nova senha"
+        android:layout_marginTop="20dp"
+        android:id="@+id/tvNovaSenha"/>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textPassword"
+        android:id="@+id/etNovaSenha"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Confirme a senha"
+        android:layout_marginTop="20dp"
+        android:id="@+id/tvConfirmarSenha"/>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textPassword"
+        android:id="@+id/etConfirmarSenha"/>
+
+    <Button
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="Confirmar"
+        android:id="@+id/btConfirmar"/>
+
+</LinearLayout>

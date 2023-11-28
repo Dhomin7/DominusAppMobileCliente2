@@ -6,10 +6,12 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.navigation.Navigation;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import com.example.dominusapp.R;
 import com.example.dominusapp.databinding.FragmentRecuperarSenhaBinding;
@@ -59,7 +61,11 @@ public class RecuperarSenhaFragment extends Fragment {
                             @Override
                             public void run() {
                                 if (codRecup != -1) {
-                                    System.out.println("Foi!");
+                                    DominusApp.view.RecuperarSenhaFragmentDirections.AcaoRecuperarSenhaFragmentCodRecuperacaoFragment acao =
+                                            RecuperarSenhaFragmentDirections.acaoRecuperarSenhaFragmentCodRecuperacaoFragment(codRecup, email);
+                                    Navigation.findNavController(view).navigate(acao);
+                                } else {
+                                    Toast.makeText(getContext(), "Erro ao enviar email.", Toast.LENGTH_SHORT).show();
                                 }
                             }
                         });

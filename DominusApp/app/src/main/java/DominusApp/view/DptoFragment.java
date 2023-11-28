@@ -31,7 +31,7 @@ public class DptoFragment extends Fragment {
     InformacoesViewModel informacoesViewModel;
     DptoAdapter dptoAdapter;
     ArrayList<Departamento> listaDpto;
- FragmentDptoBinding binding;
+    FragmentDptoBinding binding;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {

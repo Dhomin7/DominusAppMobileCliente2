@@ -130,7 +130,34 @@
         android:label="fragment_recuperar_senha"
         tools:layout="@layout/fragment_recuperar_senha" >
         <action
-            android:id="@+id/acao_recuperarSenhaFragment_loginFragment"
+            android:id="@+id/acao_recuperarSenhaFragment_codRecuperacaoFragment"
+            app:destination="@id/codRecuperacaoFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/codRecuperacaoFragment"
+        android:name="DominusApp.view.CodRecuperacaoFragment"
+        android:label="fragment_cod_recupercao"
+        tools:layout="@layout/fragment_cod_recuperacao" >
+        <argument
+            android:name="codRecuperacao"
+            app:argType="integer" />
+        <argument
+            android:name="email"
+            app:argType="string" />
+        <action
+            android:id="@+id/acao_codRecuperacaoFragment_alterarSenhaRecupFragment"
+            app:destination="@id/alterarSenhaRecupFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/alterarSenhaRecupFragment"
+        android:name="DominusApp.view.AlterarSenhaRecupFragment"
+        android:label="fragment_alterar_senha_recup"
+        tools:layout="@layout/fragment_alterar_senha_recup" >
+        <argument
+            android:name="email"
+            app:argType="string" />
+        <action
+            android:id="@+id/acao_alterarSenhaRecupFragment_loginFragment"
             app:destination="@id/loginFragment" />
     </fragment>
 </navigation>
