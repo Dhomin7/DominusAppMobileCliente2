@@ -17,6 +17,8 @@ import com.example.dominusapp.databinding.FragmentMenuBinding;
 import java.io.FileDescriptor;
 import java.io.PrintWriter;
 
+import DominusApp.view.MenuFragmentDirections;
+import modelDominio.Produto;
 import modelDominio.Usuario;
 
 
@@ -35,6 +37,9 @@ public class MenuFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        MenuFragmentArgs argumentos = MenuFragmentArgs.fromBundle(getArguments());
+
+        Usuario usuario = argumentos.getUsuario();
 
         binding.bMenuOfertas.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -58,7 +63,11 @@ public class MenuFragment extends Fragment {
         binding.bMenuUsuario.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Navigation.findNavController(view).navigate(R.id.acao_menuFragment_usuarioFragment);
+
+                MenuFragmentDirections.AcaoMenuFragmentUsuarioFragment acao =
+                        MenuFragmentDirections.acaoMenuFragmentUsuarioFragment(usuario);
+                Navigation.findNavController(view).navigate(acao);
+
             }
         });
     }

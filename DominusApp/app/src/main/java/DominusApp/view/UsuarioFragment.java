@@ -13,6 +13,8 @@ import android.view.ViewGroup;
 import com.example.dominusapp.R;
 import com.example.dominusapp.databinding.FragmentUsuarioBinding;
 
+import modelDominio.Usuario;
+
 
 public class UsuarioFragment extends Fragment {
 
@@ -28,6 +30,17 @@ public class UsuarioFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        UsuarioFragmentArgs argumentos = UsuarioFragmentArgs.fromBundle(getArguments());
+        Usuario usuario = argumentos.getUsuario();
+
+        binding.tvNomeUsuario.setText(usuario.getNome());
+        binding.tvEmailUsuario.setText(usuario.getLogin());
+        binding.tvEnderecoUsuario.setText(usuario.getEndereco());
+
+       // if (usuario.){
+
+        //}
+
     }
 
     @Override

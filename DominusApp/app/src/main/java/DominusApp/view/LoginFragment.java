@@ -71,8 +71,9 @@ public class LoginFragment extends Fragment {
                             public void run() {
                                 if(usuarioLogado!=null){
                                     informacoesViewModel.inicializaUsuarioLogado(usuarioLogado);
-                                    Navigation.findNavController(view).navigate(R.id.acao_loginFragment_menuFragment);
-
+                                    LoginFragmentDirections.AcaoLoginFragmentMenuFragment acao =
+                                            LoginFragmentDirections.acaoLoginFragmentMenuFragment(usuarioLogado);
+                                    Navigation.findNavController(view).navigate(acao);
 
                                 }else{
                                     Toast.makeText(getContext(), "Erro, Usuário e/ou senha inválidos", Toast.LENGTH_SHORT).show();

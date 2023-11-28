@@ -43,7 +43,7 @@ public class ProdutoFragment extends Fragment {
         binding.tvNomeMarcaProduto.setText(produto.getMarca().getNomeMarca());
         binding.tvDptoProduto.setText(produto.getDepartamento().getNomeDpto());
         binding.tvPrecoProduto.setText(produto.getPrecoString());
-        binding.tvVendedorProduto.setText(produto.getVendedor().getNome()); //Não foi
+        binding.tvVendedorProduto.setText(produto.getVendedor().getNome());
         binding.tvDescricaoProduto.setText(produto.getDescricao());
 
         binding.bAdicionarCarrinho.setOnClickListener(new View.OnClickListener() {
