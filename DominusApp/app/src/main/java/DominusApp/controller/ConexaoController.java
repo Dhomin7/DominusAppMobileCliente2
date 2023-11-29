@@ -168,13 +168,13 @@ public class ConexaoController {
         return resultado;
     }
 
-    public boolean vendaInserir(Produto produto) {
+    public boolean vendaInserir(Venda novaVenda) {
         boolean resultado;
 
         try {
             this.informacoesViewModel.getOutputStream().writeObject("VendaInserir");
             String msg = (String) this.informacoesViewModel.getInputStream().readObject();
-            this.informacoesViewModel.getOutputStream().writeObject(produto);
+            this.informacoesViewModel.getOutputStream().writeObject(novaVenda);
             resultado = (boolean) this.informacoesViewModel.getInputStream().readObject();
         } catch (IOException ioe) {
             Log.e("DominusApp", "Erro: "+ ioe.getMessage());

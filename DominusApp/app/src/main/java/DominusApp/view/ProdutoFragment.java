@@ -5,6 +5,7 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.Navigation;
 
 import android.view.LayoutInflater;
@@ -21,6 +22,7 @@ import java.util.Date;
 
 import DominusApp.controller.ConexaoController;
 import DominusApp.viewModel.InformacoesViewModel;
+import modelDominio.Cliente;
 import modelDominio.ItensVenda;
 import modelDominio.Produto;
 import modelDominio.Usuario;
@@ -43,7 +45,7 @@ public class ProdutoFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         ProdutoFragmentArgs argumentos = ProdutoFragmentArgs.fromBundle(getArguments());
-
+        informacoesViewModel = new ViewModelProvider(getActivity()).get(InformacoesViewModel.class);
         Produto produto = argumentos.getProduto();
 
         binding.tvNomeProduto.setText(produto.getNome());
@@ -62,7 +64,6 @@ public class ProdutoFragment extends Fragment {
         binding.bCarrinho.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
 
             }
         });
@@ -91,7 +92,7 @@ public class ProdutoFragment extends Fragment {
                     @Override
                     public void run() {
                         ConexaoController conexaoController = new ConexaoController(informacoesViewModel);
-                        boolean resultado = conexaoController.vendaInserir(produto);
+                        boolean resultado = conexaoController.vendaInserir(novaVenda);
                         
                         getActivity().runOnUiThread(new Runnable() {
                             @Override
