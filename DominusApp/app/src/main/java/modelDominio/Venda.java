@@ -15,8 +15,16 @@ public class Venda implements Serializable{
     private ArrayList<ItensVenda> itens;
     private Cliente cliente;
 
-    public Venda(int codVenda, Date dataVenda, float valor, ArrayList<ItensVenda> itens, Cliente cliente) {
+    public Venda(int codVenda, Date dataVenda, float valor, ArrayList<ItensVenda> itens, Usuario comprador) {
         this.codVenda = codVenda;
+        this.dataVenda = dataVenda;
+        this.valor = valor;
+        this.itens = itens;
+        this.cliente = cliente;
+    }
+
+    public Venda(Date dataVenda, float valor, ArrayList<ItensVenda> itens, Usuario comprador) {
+        //PARA INSERTS
         this.dataVenda = dataVenda;
         this.valor = valor;
         this.itens = itens;

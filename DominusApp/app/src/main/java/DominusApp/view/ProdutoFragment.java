@@ -14,12 +14,17 @@ import android.widget.Toast;
 
 import com.example.dominusapp.databinding.FragmentProdutoBinding;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
 
 import DominusApp.controller.ConexaoController;
 import DominusApp.viewModel.InformacoesViewModel;
 import modelDominio.ItensVenda;
 import modelDominio.Produto;
+import modelDominio.Usuario;
+import modelDominio.Venda;
 
 public class ProdutoFragment extends Fragment {
     FragmentProdutoBinding binding;
@@ -65,8 +70,22 @@ public class ProdutoFragment extends Fragment {
         binding.bComprar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                ArrayList<ItensVenda> listaItensVenda= new ArrayList<>();
+                int quantidade = 1;
+                ItensVenda itemVenda = new ItensVenda(produto, quantidade, produto.getPreco(), produto.getPreco() * quantidade);
+                listaItensVenda.add(itemVenda);
 
-                ItensVenda itemVenda = new ItensVenda(produto, 1, produto.getPreco(), produto.getPreco());
+                SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+                Date dataVenda = Calendar.getInstance().getTime();
+
+                float valorVenda = 0;
+                for (ItensVenda itemVendaValor: listaItensVenda) {
+                    valorVenda += itemVendaValor.getValorTotal();
+                }
+
+                Usuario comprador = informacoesViewModel.getUsuario();
+
+                Venda novaVenda = new Venda(dataVenda, valorVenda, listaItensVenda, comprador);
 
                 Thread thread = new Thread(new Runnable() {
                     @Override
