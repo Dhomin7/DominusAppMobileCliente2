@@ -181,7 +181,7 @@ public class ConexaoController {
             resultado = false;
         } catch (ClassNotFoundException cne) {
             Log.e("DominusApp", "Erro: "+ cne.getMessage());
-            resultado = false;s
+            resultado = false;
         }
         return resultado;
     }

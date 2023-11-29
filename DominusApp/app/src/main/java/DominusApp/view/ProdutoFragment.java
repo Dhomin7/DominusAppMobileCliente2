@@ -18,6 +18,7 @@ import java.util.ArrayList;
 
 import DominusApp.controller.ConexaoController;
 import DominusApp.viewModel.InformacoesViewModel;
+import modelDominio.ItensVenda;
 import modelDominio.Produto;
 
 public class ProdutoFragment extends Fragment {
@@ -64,6 +65,9 @@ public class ProdutoFragment extends Fragment {
         binding.bComprar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+                ItensVenda itemVenda = new ItensVenda(produto, 1, produto.getPreco(), produto.getPreco());
+
                 Thread thread = new Thread(new Runnable() {
                     @Override
                     public void run() {

@@ -19,6 +19,14 @@ public class ItensVenda implements Serializable {
         this.valorTotal = valorTotal;
     }
 
+    public ItensVenda(Produto produto, int quantidade, float valorUnitario, float valorTotal) {
+        //PARA INSERTS
+        this.produto = produto;
+        this.quantidade = quantidade;
+        this.valorUnitario = valorUnitario;
+        this.valorTotal = valorTotal;
+    }
+
     @Override
     public String toString() {
         return "ItensVenda{" + "codItensVenda=" + codItensVenda + ", produto=" + produto + ", quantidade=" + quantidade + ", valorUniario=" + valorUnitario + ", valorTotal=" + valorTotal + '}';
