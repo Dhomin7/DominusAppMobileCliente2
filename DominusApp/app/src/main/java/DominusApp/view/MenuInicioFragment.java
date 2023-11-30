@@ -38,6 +38,7 @@ public class MenuInicioFragment extends Fragment {
                              Bundle savedInstanceState) {
         binding = FragmentMenuInicioBinding.inflate(inflater,container,false);
         return binding.getRoot();
+
     }
 
     @Override
