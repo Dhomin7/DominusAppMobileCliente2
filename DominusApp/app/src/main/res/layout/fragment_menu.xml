@@ -4,60 +4,39 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="#F15656"
+    android:background="@drawable/background"
     tools:context="DominusApp.view.MenuFragment">
 
-
+    <ImageView
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_gravity="center"
+        android:src="@drawable/logo"></ImageView>
 
     <Button
-
         android:id="@+id/bMenuOfertas"
-
-        android:background="@drawable/botao_menu"
-
-        android:layout_width="290dp"
-        android:layout_height="60dp"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginLeft="60dp"
-        android:layout_marginTop="15dp"
-        android:elevation="4dp"
-
+        android:layout_marginTop="40dp"
+        android:layout_width="240dp"
+        android:layout_height="50dp"
+        android:textSize="20dp"
+        style="@style/botao1"
         android:text="Ofertas"
-
-        />
+/>
 
     <Button
-        android:layout_width="290dp"
-        android:background="#000000"
-        android:layout_height="60dp"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginLeft="60dp"
-        android:layout_marginTop="15dp"
-        android:elevation="4dp"
+        android:layout_marginTop="40dp"
+        android:layout_width="240dp"
+        android:layout_height="50dp"
+        android:textSize="20dp"
+        style="@style/botao2"
         android:text="Departamentos"
         android:id="@+id/bMenuDpto"/>
     <Button
-        android:layout_width="290dp"
-        android:background="#000000"
-        android:layout_height="60dp"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginLeft="60dp"
-        android:layout_marginTop="15dp"
-        android:elevation="4dp"
-        android:text="Carrinho"
-        android:id="@+id/bMenuCarrinho"/>
-    <Button
-        android:layout_width="290dp"
-        android:background="#000000"
-        android:layout_height="60dp"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginLeft="60dp"
-        android:layout_marginTop="15dp"
-        android:elevation="4dp"
+        android:layout_marginTop="40dp"
+        android:layout_width="240dp"
+        android:layout_height="50dp"
+        android:textSize="20dp"
+        style="@style/botao1"
         android:text="Usuário"
         android:id="@+id/bMenuUsuario"/>
 

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="logo">
+        <item name="android:layout_gravity">center</item>
+    </style>
+    <style name="botao1">
+            <item name="android:textColor">@drawable/cordotextoquandoclicado</item>
+            <item name="android:background">@drawable/botao_menu</item>
+            <item name="android:paddingStart">16dp</item>
+            <item name="android:paddingEnd">16dp</item>
+            <item name="android:paddingTop">8dp</item>
+            <item name="android:paddingBottom">8dp</item>
+            <item name="android:textSize">22dp</item>
+            <item name="android:layout_gravity">center</item>
+    </style>
+    <style name="botao2">
+        <item name="android:textColor">@drawable/cordotextoquandoclicado</item>
+        <item name="android:background">@drawable/botao_menu2</item>
+        <item name="android:paddingStart">16dp</item>
+        <item name="android:paddingEnd">16dp</item>
+        <item name="android:paddingTop">8dp</item>
+        <item name="android:paddingBottom">8dp</item>
+        <item name="android:textSize">22dp</item>
+        <item name="android:layout_gravity">center</item>
+    </style>
+    <style name="editText">
+        <item name="android:textSize">20dp</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textColorHint">@color/white</item>
+        <item name="android:backgroundTint">@color/botao1</item>
+        <item name="android:padding">8dp</item>
+    </style>
+    <style name="textView">
+        <item name="android:textColor">@drawable/cordotextoquandoclicado</item>
+        <item name="android:background">@drawable/text_view1</item>
+        <item name="android:paddingStart">16dp</item>
+        <item name="android:paddingEnd">16dp</item>
+        <item name="android:paddingTop">8dp</item>
+        <item name="android:paddingBottom">8dp</item>
+        <item name="android:textSize">22dp</item>
+        <item name="android:layout_gravity">center</item>
+    </style>
+    <style name="textViewCadastro">
+        <item name="android:layout_marginTop">10dp</item>
+        <item name="android:textColor">@drawable/cordotextoquandoclicado</item>
+        <item name="android:background">@drawable/text_view1</item>
+        <item name="android:paddingStart">16dp</item>
+        <item name="android:paddingEnd">16dp</item>
+        <item name="android:paddingTop">8dp</item>
+        <item name="android:paddingBottom">8dp</item>
+        <item name="android:textSize">18dp</item>
+        <item name="android:layout_gravity">center</item>
+    </style>
+    <style name="editTextCadastro">
+        <item name="android:layout_marginTop">2dp</item>
+        <item name="android:textSize">16dp</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textColorHint">@color/white</item>
+        <item name="android:backgroundTint">@color/botao1</item>
+        <item name="android:padding">8dp</item>
+    </style>
+</resources>

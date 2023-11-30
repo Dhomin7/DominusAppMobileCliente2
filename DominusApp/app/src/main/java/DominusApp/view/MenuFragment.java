@@ -4,6 +4,7 @@ import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.Navigation;
 
@@ -26,7 +27,15 @@ public class MenuFragment extends Fragment {
 
     FragmentMenuBinding binding;
 
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
 
+        AppCompatActivity activity = (AppCompatActivity) getActivity();
+        if (activity != null && activity.getSupportActionBar() != null) {
+            activity.getSupportActionBar().setTitle("");
+        }
+    }
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -52,12 +61,6 @@ public class MenuFragment extends Fragment {
             public void onClick(View view) {
                 Navigation.findNavController(view).navigate(R.id.acao_menuFragment_dptoFragment);
 
-            }
-        });
-        binding.bMenuCarrinho.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Navigation.findNavController(view).navigate(R.id.acao_menuFragment_carrinhoFragment);
             }
         });
         binding.bMenuUsuario.setOnClickListener(new View.OnClickListener() {

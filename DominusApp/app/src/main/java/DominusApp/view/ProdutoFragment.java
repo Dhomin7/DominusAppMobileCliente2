@@ -55,18 +55,7 @@ public class ProdutoFragment extends Fragment {
         binding.tvVendedorProduto.setText(produto.getVendedor().getNome());
         binding.tvDescricaoProduto.setText(produto.getDescricao());
 
-        binding.bAdicionarCarrinho.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(getContext(),"Produto adicionado ao carrinho",Toast.LENGTH_SHORT).show();
-            }
-        });
-        binding.bCarrinho.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
 
-            }
-        });
 
         binding.bComprar.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -3,8 +3,8 @@
     <item android:state_pressed="false">
         <shape>
             <gradient
-                android:startColor="@color/background"
-                android:endColor="@color/botao1"
+                android:startColor="@color/botao1"
+                android:endColor="@color/background"
                 android:angle="315"/>
             <corners android:radius="8dp" />
             <stroke android:width="2dp" android:color="@color/botao1" />
@@ -14,9 +14,9 @@
     <item android:state_pressed="true">
         <shape>
             <gradient
-            android:startColor="@color/background"
-            android:endColor="@color/botao1"
-            android:angle="315"/>
+                android:startColor="@color/botao1"
+                android:endColor="@color/background"
+                android:angle="315"/>
             <corners android:radius="16dp" />
             <stroke android:width="2dp" android:color="@color/background" />
         </shape>

@@ -4,64 +4,98 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="DominusApp.view.CadastrarFragment">
+    tools:context="DominusApp.view.CadastrarFragment"
+    android:background="@drawable/background2">
 
     <TextView
-        android:layout_width="wrap_content"
+        android:layout_width="380dp"
         android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        style="@style/textViewCadastro"
         android:id="@+id/tvCadastrarNome"
-        android:text="Qual o seu nome?"/>
+        android:text="Qual o seu Nome?"/>
     <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="350dp"
+        android:layout_height="50dp"
+        android:layout_gravity="center"
+        android:hint="Digite o seu Nome"
+        style="@style/editTextCadastro"
         android:id="@+id/etCadastrarNome"/>
 
     <TextView
-        android:layout_width="wrap_content"
+        android:layout_width="380dp"
         android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        style="@style/textViewCadastro"
         android:id="@+id/tvCadastrarLogin"
-        android:text="Informe um email:"/>
+        android:text="Informe um E-mail:"/>
     <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="350dp"
+        android:layout_height="50dp"
+        android:layout_gravity="center"
+        style="@style/editTextCadastro"
+        android:hint="Digite o seu E-mail"
         android:id="@+id/etCadastrarLogin"/>
 
     <TextView
-        android:layout_width="wrap_content"
+        android:layout_width="380dp"
         android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        style="@style/textViewCadastro"
         android:id="@+id/tvCadastrarCPF"
         android:text="Digite o seu CPF:"/>
     <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="350dp"
+        android:layout_height="50dp"
+        android:layout_gravity="center"
+        style="@style/editTextCadastro"
+        android:hint="Digite o seu CPF"
         android:id="@+id/etCadastrarCPF"
         android:digits="0123456789.-"
         android:maxLength="14"/>
 
     <TextView
-        android:layout_width="wrap_content"
+        android:layout_width="380dp"
         android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        style="@style/textViewCadastro"
         android:id="@+id/tvCadastrarEndereco"
-        android:text="Qual o seu endereço?"/>
+        android:text="Qual o seu Endereço?"/>
     <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="350dp"
+        android:layout_height="50dp"
+        android:layout_gravity="center"
+        style="@style/editTextCadastro"
+        android:hint="Digite o seu Endereço"
         android:id="@+id/etCadastrarEndereco"/>
 
     <TextView
-        android:layout_width="wrap_content"
+        android:layout_width="380dp"
         android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        style="@style/textViewCadastro"
         android:id="@+id/tvCadastrarSenha"
         android:text="Digite a sua Senha: "/>
     <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="350dp"
+        android:layout_height="50dp"
+        android:layout_gravity="center"
+        style="@style/editTextCadastro"
+        android:hint="Digite a sua Senha"
         android:id="@+id/etCadastrarSenha"
         android:inputType="textPassword"/>
 
     <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_width="240dp"
+        android:layout_height="50dp"
+        android:textSize="20dp"
+        style="@style/botao2"
         android:text="Cadastrar"
         android:id="@+id/bCadastrarCadastrar"/>
     

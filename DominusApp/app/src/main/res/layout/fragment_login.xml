@@ -4,48 +4,64 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="DominusApp.view.LoginFragment">
-
+    tools:context="DominusApp.view.LoginFragment"
+    android:background="@drawable/background"
+    >
     <TextView
-        android:layout_width="wrap_content"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:id="@+id/tvLoginUsuario"
-        android:text="Usuario: "/>
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/etLoginUsuario"/>
+        android:text="Faça o seu Login"
+        android:layout_gravity="center"
+        android:layout_marginTop="40dp"
+        android:gravity="center"
+        style="@style/textView"
+        />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/tvLoginSenha"
-        android:text="Senha: "/>
     <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:layout_width="350dp"
+        android:layout_height="50dp"
+        android:layout_gravity="center"
+        android:hint="Digite o seu usuário"
+        android:id="@+id/etLoginUsuario"
+        style="@style/editText"/>
+    <EditText
+        android:layout_marginTop="20dp"
+        android:layout_width="350dp"
+        android:layout_height="50dp"
+        android:layout_gravity="center"
+        android:hint="Digite a sua senha"
         android:id="@+id/etLoginSenha"
-        android:inputType="textPassword"/>
+        android:inputType="textPassword"
+        style="@style/editText"/>
 
-    <TextView
+        <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/tvEsqueceuSenha"
-        android:text="Esqueceu sua senha?"
+        android:text="Esqueceu a sua senha?"
         android:layout_gravity="center"
-        android:layout_margin="20dp"
+        android:layout_marginTop="20dp"
+        android:textSize="18dp"
         android:textColor="#ffcc00"/>
 
+
     <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:layout_width="240dp"
+        android:layout_height="50dp"
+        android:textSize="20dp"
         android:text="Entrar"
-        android:id="@+id/bLoginSalvar"/>
+        android:id="@+id/bLoginSalvar"
+        style="@style/botao1"/>
     <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:layout_width="240dp"
+        android:layout_height="50dp"
+        android:textSize="20dp"
         android:text="Cancelar"
-        android:id="@+id/bLoginCancelar"/>
+        android:id="@+id/bLoginCancelar"
+        style="@style/botao2"/>
 
 
 

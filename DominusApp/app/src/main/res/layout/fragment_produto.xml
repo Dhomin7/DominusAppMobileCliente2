@@ -91,12 +91,6 @@
 
     </LinearLayout>
 
-    <Button
-        android:layout_width="250dp"
-        android:layout_height="wrap_content"
-        android:text="Adicionar ao Carrinho"
-        android:layout_gravity="center"
-        android:id="@+id/bAdicionarCarrinho"/>
 
     <Button
         android:layout_width="250dp"
@@ -105,12 +99,7 @@
         android:layout_gravity="center"
         android:id="@+id/bComprar"/>
 
-    <Button
-        android:layout_width="250dp"
-        android:layout_height="wrap_content"
-        android:text="Ir ao Carrinho de Compras"
-        android:layout_gravity="center"
-        android:id="@+id/bCarrinho"/>
+
 
 
 </LinearLayout>
