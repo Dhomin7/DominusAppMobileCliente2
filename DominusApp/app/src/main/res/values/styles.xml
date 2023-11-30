@@ -51,6 +51,30 @@
         <item name="android:textSize">18dp</item>
         <item name="android:layout_gravity">center</item>
     </style>
+
+    <style name="textView2">
+        <item name="android:textColor">@drawable/cordotextoquandoclicado</item>
+        <item name="android:background">@drawable/text_view3</item>
+        <item name="android:paddingStart">16dp</item>
+        <item name="android:paddingEnd">16dp</item>
+        <item name="android:paddingTop">8dp</item>
+        <item name="android:paddingBottom">8dp</item>
+        <item name="android:textSize">18dp</item>
+        <item name="android:layout_gravity">center</item>
+    </style>
+    <style name="textView3">
+        <item name="android:textColor">@drawable/cordotextoquandoclicado</item>
+        <item name="android:background">@drawable/text_view2</item>
+        <item name="android:paddingStart">16dp</item>
+        <item name="android:paddingEnd">16dp</item>
+        <item name="android:paddingTop">8dp</item>
+        <item name="android:paddingBottom">8dp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_marginLeft">15dp</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:layout_gravity">center</item>
+    </style>
     <style name="editTextCadastro">
         <item name="android:layout_marginTop">2dp</item>
         <item name="android:textSize">16dp</item>
@@ -58,5 +82,14 @@
         <item name="android:textColorHint">@color/white</item>
         <item name="android:backgroundTint">@color/botao1</item>
         <item name="android:padding">8dp</item>
+    </style>
+    <style name="cardView">
+        <item name="android:layout_gravity">center</item>
+        <item name="cardCornerRadius">4dp</item>
+        <item name="cardElevation">6dp</item>
+        <item name="cardUseCompatPadding">true</item>
+
+
+
     </style>
 </resources>

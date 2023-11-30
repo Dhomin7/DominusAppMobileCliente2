@@ -51,7 +51,7 @@ public class ProdutoFragment extends Fragment {
         binding.tvNomeProduto.setText(produto.getNome());
         binding.tvNomeMarcaProduto.setText(produto.getMarca().getNomeMarca());
         binding.tvDptoProduto.setText(produto.getDepartamento().getNomeDpto());
-        binding.tvPrecoProduto.setText(produto.getPrecoString());
+        binding.tvPrecoProduto.setText("R$ "+produto.getPrecoString());
         binding.tvVendedorProduto.setText(produto.getVendedor().getNome());
         binding.tvDescricaoProduto.setText(produto.getDescricao());
 

@@ -3,100 +3,166 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="DominusApp.view.ProdutoFragment">
+    tools:context="DominusApp.view.ProdutoFragment"
+    android:background="@drawable/background">
+
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="8dp"
-        android:orientation="vertical">
+        android:orientation="horizontal"
+        android:gravity="center">
+
+
         <TextView
             android:id="@+id/tvNomeProduto"
+            style="@style/textView"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
+            android:layout_height="80dp"
             android:layout_alignParentStart="true"
-            android:layout_alignParentBottom="true"
             android:layout_alignParentTop="true"
-            android:gravity="right"
-            android:textColor="@color/black"
-            android:textSize="16sp"
-            android:textStyle="bold"/>
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:textSize="22dp"
+            android:textStyle="bold" />
+
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="8dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        >
 
         <TextView
-            android:id="@+id/tvNomeMarcaProduto"
-            android:layout_width="wrap_content"
+            android:layout_width="100dp"
             android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentBottom="true"
-            android:layout_alignParentTop="true"
-            android:gravity="right"
-            android:textColor="@color/black"
-            android:textSize="16sp"
-            android:textStyle="bold"/>
-
-        <TextView
-            android:id="@+id/tvDptoProduto"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentBottom="true"
-            android:layout_alignParentTop="true"
-            android:gravity="right"
-            android:textColor="@color/black"
-            android:textSize="16sp"
-            android:textStyle="bold"/>
+            android:layout_gravity="left"
+            android:layout_marginLeft="10dp"
+            android:gravity="center"
+            style="@style/textView2"
+            android:text="Preço:"/>
 
         <TextView
             android:id="@+id/tvPrecoProduto"
+            style="@style/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+    </LinearLayout>
+    <View
+        android:layout_width="350dp"
+        android:layout_height="2dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="8dp"
+        android:background="@color/cinzaClaro"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="8dp"
+        android:gravity="left"
+        android:orientation="horizontal"
+        android:layout_marginTop="15dp">
+        <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentBottom="true"
-            android:layout_alignParentTop="true"
-            android:gravity="right"
-            android:textColor="@color/black"
-            android:textSize="16sp"
-            android:textStyle="bold"/>
+            android:layout_gravity="left"
+            android:layout_marginLeft="25dp"
+            android:gravity="center"
+            style="@style/textView2"
+            android:text="Marca:"/>
 
+        <TextView
+            android:id="@+id/tvNomeMarcaProduto"
+            style="@style/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            />
 
+    </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            android:orientation="horizontal"
+            android:layout_marginTop="10dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:layout_marginLeft="25dp"
+                android:gravity="center"
+                style="@style/textView2"
+                android:text="Departamento:"/>
+            <TextView
+                android:id="@+id/tvDptoProduto"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/textView3"
+                />
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            android:orientation="horizontal"
+            android:layout_marginTop="10dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:layout_marginLeft="25dp"
+                android:gravity="center"
+                style="@style/textView2"
+                android:text="Vendedor:"/>
         <TextView
             android:id="@+id/tvVendedorProduto"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentBottom="true"
-            android:layout_alignParentTop="true"
-            android:gravity="right"
-            android:textColor="@color/black"
-            android:textSize="16sp"
-            android:textStyle="bold"/>
-
+            style="@style/textView3"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            android:orientation="horizontal"
+            android:layout_marginTop="10dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:layout_marginLeft="25dp"
+                android:gravity="center"
+                style="@style/textView2"
+                android:text="Descrição:"
+                />
         <TextView
             android:id="@+id/tvDescricaoProduto"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentBottom="true"
-            android:layout_alignParentTop="true"
-            android:gravity="right"
-            android:textColor="@color/black"
-            android:textSize="16sp"
-            android:textStyle="bold"/>
+            style="@style/textView3"/>
 
     </LinearLayout>
-
+    <View
+        android:layout_width="350dp"
+        android:layout_height="2dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:background="@color/cinzaClaro"/>
 
     <Button
-        android:layout_width="250dp"
-        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:layout_width="240dp"
+        android:layout_height="50dp"
+        android:textSize="20dp"
+        style="@style/botao1"
         android:text="Comprar"
-        android:layout_gravity="center"
         android:id="@+id/bComprar"/>
 
 

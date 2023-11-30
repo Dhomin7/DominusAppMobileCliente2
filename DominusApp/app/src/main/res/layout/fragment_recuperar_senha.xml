@@ -4,35 +4,42 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="DominusApp.view.RecuperarSenhaFragment">
+    tools:context="DominusApp.view.RecuperarSenhaFragment"
+    android:background="@drawable/background2">
 
     <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
         android:id="@+id/tvOrdem"
-        android:textAlignment="center"
-        android:textSize="18dp"
-        android:textColor="@color/black"
-        android:text="Informe o seu email para que possamos lhe enviar um código de recuperação"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="40dp"
+        android:gravity="center"
+        style="@style/textView"
+        android:text="Informe o seu E-mail para que possamos lhe enviar um código de recuperação"
         />
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/tvEmailRecup"
-        android:layout_marginTop="20dp"
-        android:text="Email"/>
+
     <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:layout_width="350dp"
+        android:layout_height="50dp"
+        android:layout_gravity="center"
+        android:hint="Digite o seu usuário"
         android:id="@+id/etEmailRecup"
+        style="@style/editText"
         />
 
     <Button
-        android:layout_width="250dp"
-        android:layout_height="wrap_content"
         android:id="@+id/btEnviar"
-        android:layout_gravity="center"
+        android:layout_marginTop="40dp"
+        android:layout_width="240dp"
+        android:layout_height="50dp"
+        android:textSize="20dp"
+        style="@style/botao1"
         android:text="Enviar código"
         />
-
+    <ImageView
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_gravity="center"
+        android:src="@drawable/logo"></ImageView>
 </LinearLayout>

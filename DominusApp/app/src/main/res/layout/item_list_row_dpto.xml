@@ -5,18 +5,18 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical">
     <androidx.cardview.widget.CardView
-        android:layout_width="match_parent"
+        android:layout_width="380dp"
         android:layout_height="wrap_content"
-        app:cardCornerRadius="4dp"
-        app:cardElevation="6dp"
-        app:cardUseCompatPadding="true"
+        style="@style/cardView"
         >
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="8dp"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            style="@style/textView"
+            android:gravity="center">
             <TextView
                 android:id="@+id/tvNomeDpto"
                 android:layout_width="wrap_content"
@@ -25,9 +25,9 @@
                 android:layout_alignParentStart="true"
                 android:layout_alignParentBottom="true"
                 android:layout_alignParentTop="true"
-                android:gravity="right"
-                android:textColor="@color/black"
-                android:textSize="16sp"
+                android:gravity="center"
+                android:textColor="@color/cinzaClaro"
+                android:textSize="20sp"
                 android:textStyle="bold"/>
 
 
