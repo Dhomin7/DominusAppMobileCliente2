@@ -4,6 +4,7 @@ import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.Navigation;
@@ -30,7 +31,15 @@ import modelDominio.Usuario;
 public class CadastrarFragment extends Fragment {
     FragmentCadastrarBinding binding;
     InformacoesViewModel informacoesViewModel;
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
 
+        AppCompatActivity activity = (AppCompatActivity) getActivity();
+        if (activity != null && activity.getSupportActionBar() != null) {
+            activity.getSupportActionBar().setTitle("");
+        }
+    }
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
