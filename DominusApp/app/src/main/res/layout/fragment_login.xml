@@ -22,7 +22,7 @@
         android:layout_width="350dp"
         android:layout_height="50dp"
         android:layout_gravity="center"
-        android:hint="Digite o seu usuário"
+        android:hint="Digite o seu E-mail"
         android:id="@+id/etLoginUsuario"
         style="@style/editText"/>
     <EditText
@@ -30,7 +30,7 @@
         android:layout_width="350dp"
         android:layout_height="50dp"
         android:layout_gravity="center"
-        android:hint="Digite a sua senha"
+        android:hint="Digite a sua Senha"
         android:id="@+id/etLoginSenha"
         android:inputType="textPassword"
         style="@style/editText"/>
