@@ -23,7 +23,7 @@
         android:layout_width="350dp"
         android:layout_height="50dp"
         android:layout_gravity="center"
-        android:hint="Digite o seu usuário"
+        android:hint="Digite o seu E-mail"
         android:id="@+id/etEmailRecup"
         style="@style/editText"
         />
@@ -31,6 +31,7 @@
     <Button
         android:id="@+id/btEnviar"
         android:layout_marginTop="40dp"
+        android:layout_marginBottom="20dp"
         android:layout_width="240dp"
         android:layout_height="50dp"
         android:textSize="20dp"

@@ -3,32 +3,41 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="DominusApp.view.CodRecuperacaoFragment">
+    tools:context="DominusApp.view.CodRecuperacaoFragment"
+    android:background="@drawable/background">
+
 
     <TextView
-        android:layout_width="wrap_content"
+        android:layout_width="350dp"
         android:layout_height="wrap_content"
-        android:textAlignment="center"
-        android:textSize="18dp"
-        android:textColor="@color/black"
+        android:layout_gravity="center"
+        android:layout_marginTop="40dp"
+        android:gravity="center"
+        style="@style/textView"
         android:text="Informe o código de 4 digitos enviado para o seu email"
         android:id="@+id/tvOrdem"/>
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/tvCodRecuperacao"
-        android:layout_marginTop="20dp"
-        android:text="Código"/>
+
     <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:layout_width="350dp"
+        android:layout_height="50dp"
+        android:layout_gravity="center"
+        android:hint="Digite o Código"
+        style="@style/editText"
         android:inputType="number"
         android:id="@+id/etCodRecuperacao"/>
     <Button
-        android:layout_width="250dp"
-        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:layout_width="240dp"
+        android:layout_height="50dp"
+        android:textSize="20dp"
+        style="@style/botao1"
         android:text="Verificar"
-        android:layout_gravity="center"
         android:id="@+id/btVerificar"/>
 
+    <ImageView
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_gravity="center"
+        android:src="@drawable/logo"></ImageView>
 </LinearLayout>

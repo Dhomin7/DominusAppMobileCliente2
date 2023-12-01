@@ -3,46 +3,51 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="DominusApp.view.AlterarSenhaRecupFragment">
+    tools:context="DominusApp.view.AlterarSenhaRecupFragment"
+    android:background="@drawable/background2">
 
    <TextView
-       android:layout_width="wrap_content"
+       android:layout_width="350dp"
        android:layout_height="wrap_content"
-       android:textAlignment="center"
-       android:textSize="18dp"
-       android:textColor="@color/black"
-       android:text="Informe uma nova senha"
+       android:layout_gravity="center"
+       android:layout_marginTop="40dp"
+       android:gravity="center"
+       style="@style/textView"
+       android:text="Redefina a sua Senha"
        android:id="@+id/tvOrdem"/>
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Nova senha"
-        android:layout_marginTop="20dp"
-        android:id="@+id/tvNovaSenha"/>
     <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:layout_width="350dp"
+        android:layout_height="50dp"
+        android:layout_gravity="center"
+        android:hint="Digite a Nova Senha"
+        style="@style/editText"
         android:inputType="textPassword"
         android:id="@+id/etNovaSenha"/>
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Confirme a senha"
-        android:layout_marginTop="20dp"
-        android:id="@+id/tvConfirmarSenha"/>
     <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:layout_width="350dp"
+        android:layout_height="50dp"
+        android:layout_gravity="center"
+        android:hint="Confirme a Senha"
+        style="@style/editText"
         android:inputType="textPassword"
         android:id="@+id/etConfirmarSenha"/>
 
     <Button
-        android:layout_width="250dp"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
+        android:layout_marginTop="40dp"
+        android:layout_width="240dp"
+        android:layout_height="50dp"
+        android:textSize="20dp"
+        style="@style/botao1"
         android:text="Confirmar"
         android:id="@+id/btConfirmar"/>
+ <ImageView
+     android:layout_width="200dp"
+     android:layout_height="200dp"
+     android:layout_gravity="center"
+     android:src="@drawable/logo"></ImageView>
 
 </LinearLayout>
